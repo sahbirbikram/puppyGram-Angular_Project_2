@@ -26,7 +26,7 @@ export class TrendingComponent implements OnInit {
     modalRef.componentInstance.dog = dog;
   }
   onDelete(i) {
-    const modalRefDelete = this.modalService.open(ConfirmPopupComponent, {backdropClass: 'darker', centered: true, size: 'sm'});
+    const modalRefDelete = this.modalService.open(ConfirmPopupComponent, {backdropClass: 'darker', centered: true});
     modalRefDelete.componentInstance.confirmed.subscribe((receivedEntry) => {
       if(receivedEntry) {
         this.dogs.splice(i, 1);
