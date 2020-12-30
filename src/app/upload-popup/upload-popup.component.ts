@@ -74,6 +74,8 @@ export class UploadPopupComponent implements OnInit {
       else {
         alert("Submission failed. Enter valid secred ID.")
       }
+    } else {
+      alert('Secret ID must be of 4 to 6 digits.')
     }
   }
 }
