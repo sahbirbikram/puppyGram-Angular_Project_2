@@ -23,9 +23,7 @@
                     color: #fff;
                     font-weight: 700;
                     border-radius: 5px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
+                    @extend .center-center;
                     cursor: pointer;
                     transition: 0.3s;
                 
@@ -41,7 +39,7 @@
                     p{
                         font-size: 14px;
                         font-weight: 500;
-                        color: rgba($primary, 0.7);
+                        color: $primary7;
                         height: 50px;
                         margin: 0;
                         overflow: hidden;
@@ -53,29 +51,27 @@
                         top: 30px;
                         bottom: 30px;
                         right: 0;
-                        border: 1px solid rgba($primary, 0.2);
+                        border: 1px solid $primary2;
                     }
 
                 }
                 .dog-rating {
                     padding: 20px;
-                    display: flex;
-                    align-items: center;
+                    @extend .center-center;
                     justify-content: flex-start;
                     height: 100%;
                     .paw {
                         width: 25px;
                         height: 20px;
                         margin-right: 20px;
-                        border: 1px solid rgba($primary, 0.7);
+                        border: 1px solid $primary7;
                         border-radius: 12.5px/10px;
                         background-color: transparent;
                         position: relative;
-                        // top: 35px;
-                        // left: 0px;
+
                         span {
                             display: inline-block;
-                            border: 1px solid rgba($primary, 0.7);
+                            border: 1px solid $primary7;
                             background-color: transparent;
                             width: 10px;
                             height: 10px;
@@ -101,7 +97,7 @@
                         p{
                             height: auto;
                             margin: 0;
-                            color: rgba($primary, 0.7);
+                            color: $primary7;
                             line-height: 1.3;
                             font-size: 14px;
                             font-weight: 500;

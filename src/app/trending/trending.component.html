@@ -1,7 +1,7 @@
 <div class="container py-5 trending">
     <h1>Trending Now</h1>
     <div class="row">
-        <div class="col-md-4" *ngFor="let dog of dogs; let i = index">
+        <div class="col-xl-4 col-md-6" *ngFor="let dog of dogs; let i = index">
             <div class="dog-profile">
                 <img [src]="dog.src" [alt]="dog.title" class="img-fluid" (click)="open(dog)">
                 <i class="fa fa-times delete" aria-hidden="true" (click)="onDelete(i)"></i>

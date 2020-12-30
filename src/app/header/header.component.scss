@@ -1,13 +1,12 @@
 @import '../../custom-style.scss';
 
 .bg-light {
-    background-color: #f7f7f7;
+    background-color: #f7f7f7 !important;
 }
 
 .header {
-    display:flex;
+    @extend .center-center;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
     padding: 15px 0;
     .navbar-brand {
@@ -55,11 +54,17 @@
     }
     .input-placeholder {
         position: relative;
-        margin-left: 100px;
+        margin-left: 100%;
         width: 55%;
+        @media screen and (max-width: 1200px) {
+            margin-left: 50%;
+        }
+        @media screen and (max-width: 768px) {
+            margin-left: 30%;
+        }
       }
       .input-placeholder input {
-        border: 2px solid rgba($primary, 0.2);
+        border: 2px solid $primary2;
         border-radius: 5px;
         padding: 2px 10px;
         background: transparent;
@@ -71,13 +76,9 @@
       }
       
       .placeholder {
-        position: absolute;
         pointer-events: none;
-        top: 0;
-        bottom: 0;
-        left: 0px;
-        right: 0px;
-        color: rgba($primary, 0.4);
+        @include tlrb-0;
+        color: $primary4;
         font-size: 14px;
         display: flex;
         align-items: center;
@@ -85,31 +86,28 @@
       }
       
       .placeholder span {
-        color: rgba($primary, 0.4);
+        color: $primary4;
         padding-right: 10px;
       }
     .right-items {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 20%;
+        @extend .center-center;
+        justify-content: flex-start;
+        // width: 20%;
         font-weight: 500;
 
         .btn {
             padding: 2px 40px;
-            color: #fff;
+            color: $light;
             border-radius: 7px;
         }
         p{
             font-size: 15px;
-            background: rgba($primary, 0.4);
+            background: $primary4;
             border-radius: 50%;
             width: 35px;
             height: 35px;
             margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            @extend .center-center;
         }
     }
 }

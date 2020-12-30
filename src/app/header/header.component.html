@@ -1,4 +1,4 @@
-<nav class="navbar-light bg-light">
+<nav class="navbar-light navbar-expand-lg bg-light">
     <div class="container header">
         <a href="#" class="navbar-brand">puppy<span>gram</span>
         <span class="paw">
@@ -6,7 +6,7 @@
             <span class="small-paw"></span>
             <span class="small-paw"></span>
         </span>
-    </a>
+        </a>
         <form>
             <div class="input-placeholder">
                 <input type="text" required>
@@ -14,12 +14,25 @@
                     <span><i class="fa fa-search" aria-hidden="true"></i></span> Search
                 </div>
             </div>
-            <!-- <input type="text" placeholder="&#xF002; Search"> -->
         </form>
-        <div class="right-items">
-            <button class="btn btn-secondary" (click)=open()>Upload</button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto  right-items">
+                <li class="nav-item px-3">
+                    <button class="btn btn-secondary" (click)=open()>Upload</button>
+                </li>
+                <li class="nav-item px-3">
+                    <i class="fa fa-bell" aria-hidden="true"></i>
+                </li>
+                <li class="nav-item px-3">
+                    <p>MB</p>
+                </li>
+            </ul>
+            <!-- <button class="btn btn-secondary" (click)=open()>Upload</button>
             <i class="fa fa-bell" aria-hidden="true"></i>
-            <p>MB</p>
+            <p>MB</p> -->
         </div>
     </div>
 </nav>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ConfirmPopupComponent } from '../confirm-popup/confirm-popup.component';
 import { DogDetailPopupComponent } from '../dog-detail-popup/dog-detail-popup.component';
 import { DogsService } from '../services/all-dogs/dogs.service';
 
@@ -25,7 +26,13 @@ export class TrendingComponent implements OnInit {
     modalRef.componentInstance.dog = dog;
   }
   onDelete(i) {
-    this.dogs.splice(i, 1);
+    const modalRefDelete = this.modalService.open(ConfirmPopupComponent, {backdropClass: 'darker', centered: true, size: 'sm'});
+    modalRefDelete.componentInstance.confirmed.subscribe((receivedEntry) => {
+      if(receivedEntry) {
+        this.dogs.splice(i, 1);
+      }
+    });
+
   }
 
 }

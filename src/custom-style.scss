@@ -1,5 +1,36 @@
 
 $primary: #3c3c3c;
 $secondary: #f2994a;
+$primary7: rgba($primary, 0.7);
+$primary4: rgba($primary, 0.4);
+$primary2: rgba($primary, 0.2);
+$light: #fff;
+
+$body-color: $primary;
 
 $custom-select-indicator: none;
+
+
+
+//======================================================
+
+@mixin tlrb-0 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+@mixin heading-style {
+    font-family: "Playfair Display", serif;
+    text-transform: uppercase;
+    color: $light-color;
+
+}
+//========================================================
+
+.center-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

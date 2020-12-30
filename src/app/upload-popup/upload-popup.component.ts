@@ -48,45 +48,32 @@ export class UploadPopupComponent implements OnInit {
   onSubmit() {
 
     var value = this.dogForm.value.dogPassword,
-    sum = 0, num = 0;
+    sum = 0;
     while (value) {
+
         sum += value % 10;
         value = Math.floor(value / 10);
+        if(sum >= 10 && value === 0) {
+          value = sum;
+          sum = 0;
+        }
     }
-    while (sum >= 10) {
-      value = sum;
-      while (value) {
-        sum += value % 10;
-        value = Math.floor(value / 10);
-        console.log(sum);
+
+    if (sum === 7) {
+      this.dog = {
+        title: this.dogForm.value.dogTitle,
+        description: this.dogForm.value.dogDescription,
+        src: this.url,
+        pawFive: 0,
       }
+      this.dogsService.setDogs(this.dog);
+      alert("Sucessfully Submitted");
+      this.activeModal.dismiss();
+    }
+    else {
+      alert("Submission failed. Enter valid secred ID.")
     }
 
-    // if (num < 10 && sum !== 0) {
-    //   value = sum;
-    //   sum = 0;
-    //   while (value) {
-    //       sum = sum + value % 10;
-    //       value = Math.floor(value / 10);
-    //   }
-    //   var num = sum;
-
-    // }
-
-console.log(sum);
-
-
-
-
-
-    console.log(this.dogForm.value);
-    this.dog = {
-      title: this.dogForm.value.dogTitle,
-      description: this.dogForm.value.dogDescription,
-      src: this.url,
-      pawFive: 0,
-    }
-    this.dogsService.setDogs(this.dog);
   }
 
 

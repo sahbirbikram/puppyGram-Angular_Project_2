@@ -20,13 +20,11 @@
                     font-size: 25px;
                     font-weight: 700;
                     border-radius: 5px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
+                    @extend .center-center;
                     cursor: pointer;
                     transition: 0.3s;
                     &:hover {
-                        color: #fff;
+                        color: $light;
                         background: $secondary;
                     }
                 }
@@ -35,8 +33,7 @@
                     margin-bottom: 30px;
                 }
                 .form-group {
-                    display: flex;
-                    align-items: center;
+                    @extend .center-center;
                     justify-content: flex-start;
                     label {
                         margin: 0;
@@ -45,7 +42,7 @@
                         }
                     }
                     .btn-upload {
-                        background: rgba($primary, 0.4);
+                        background: $primary4;
                         color: $primary;
                         width: 100%;
                         font-size: 14px;
@@ -54,32 +51,26 @@
 
                         input[type=file] {
                             opacity: 0;
-                            position: absolute;
-                            top: 0;
-                            bottom: 0;
-                            left: 0;
-                            right: 0;
+                            @include tlrb-0;
                         }
                     }
+                    .btn-submit {
+                        color: $light;
+                        font-size: 14px;
+                    }
                     .dog-preview {
-                        background: rgba($primary, 0.2);
-                        border: 1px solid rgba($primary, 0.4);
-                        color:rgba($primary, 0.4);
+                        background: $primary2;
+                        border: 1px solid $primary4;
+                        color:$primary4;
                         height: 60px;
                         width: 60px;
                         position: relative;
                         &::after {
                             content: 'Preview';
-                            position: absolute;
+                            @include tlrb-0;
                             z-index: 4;
-                            top: 0;
-                            bottom: 0;
-                            right: 0;
-                            left: 0;
                             font-size: 11px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
+                            @extend .center-center;
                         }
                         img {
                             height: 100%;
@@ -89,11 +80,11 @@
 
                     }
                     .form-control {
-                        border: 2px solid rgba($primary, 0.4);
+                        border: 2px solid $primary4;
                         border-radius: 7px;
                         &::placeholder {
                             font-size: 14px;
-                            color: rgba($primary, 0.4);
+                            color: $primary4;
                         }
                     }
                 }

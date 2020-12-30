@@ -2,19 +2,17 @@
 
 
 .top-border{
-    border-top: 2px solid rgba($primary, 0.1);
+    border-top: 2px solid $primary2;
     padding: 50px;
 }
 
 footer{
     .nav {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @extend .center-center;
         .nav-item {
             padding: 10px 50px;
             font-size: 20px;
-            color: rgba($primary, 0.7);
+            color: $primary7;
             position: relative;
             &::after{
                 content:'';
@@ -32,14 +30,21 @@ footer{
                 }
             }
         }
+        @media screen and (max-width: 992px) {
+            flex-direction: column;
+            .nav-item {
+                &::after {
+                    content: '';
+                    border: 1px solid transparent;
+                }
+            }
+        }
+
     }
     .footer-bottom {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @extend .center-center;
         .navbar-brand {
             text-transform: uppercase;
-            border: 1px soild red;
             font-size: 15px;
             font-weight: 900;
             color: $primary;
@@ -83,6 +88,9 @@ footer{
         p {
             margin: 0;
             color:rgba($primary, 0.4);
+        }
+        @media screen and (max-width: 576px) {
+            flex-direction: column;
         }
     }
 }

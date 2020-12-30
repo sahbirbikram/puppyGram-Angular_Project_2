@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { TrendingComponent } from './trending/trending.component';
 import { DogDetailPopupComponent } from './dog-detail-popup/dog-detail-popup.component';
 import { UploadPopupComponent } from './upload-popup/upload-popup.component';
+import { ConfirmPopupComponent } from './confirm-popup/confirm-popup.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { UploadPopupComponent } from './upload-popup/upload-popup.component';
     DogDetailPopupComponent,
     UploadPopupComponent,
     TrendingComponent,
+    ConfirmPopupComponent,
   ],
   imports: [
     BrowserModule,
