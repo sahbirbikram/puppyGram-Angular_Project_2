@@ -47,36 +47,33 @@ export class UploadPopupComponent implements OnInit {
 
   onSubmit() {
 
-    var value = this.dogForm.value.dogPassword,
-    sum = 0;
-    while (value) {
-
-        sum += value % 10;
-        value = Math.floor(value / 10);
-        if(sum >= 10 && value === 0) {
-          value = sum;
-          sum = 0;
-        }
-    }
-
-    if (sum === 7) {
-      this.dog = {
-        title: this.dogForm.value.dogTitle,
-        description: this.dogForm.value.dogDescription,
-        src: this.url,
-        pawFive: 0,
+    if (this.dogForm.value.dogPassword > 1000 && this.dogForm.value.dogPassword < 1000000) {
+      var value = this.dogForm.value.dogPassword,
+      sum = 0;
+      while (value) {
+  
+          sum += value % 10;
+          value = Math.floor(value / 10);
+          if(sum >= 10 && value === 0) {
+            value = sum;
+            sum = 0;
+          }
       }
-      this.dogsService.setDogs(this.dog);
-      alert("Sucessfully Submitted");
-      this.activeModal.dismiss();
+  
+      if (sum === 7) {
+        this.dog = {
+          title: this.dogForm.value.dogTitle,
+          description: this.dogForm.value.dogDescription,
+          src: this.url,
+          pawFive: 0,
+        }
+        this.dogsService.setDogs(this.dog);
+        alert("Sucessfully Submitted");
+        this.activeModal.dismiss();
+      }
+      else {
+        alert("Submission failed. Enter valid secred ID.")
+      }
     }
-    else {
-      alert("Submission failed. Enter valid secred ID.")
-    }
-
   }
-
-
-
-
 }
