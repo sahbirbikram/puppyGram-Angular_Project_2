@@ -1,0 +1,29 @@
+<div class="modal-body">
+    <i class="fa fa-times delete" aria-hidden="true" (click)="activeModal.close()"></i>
+    <div class="row">
+        <div class="col-md-12">
+            <img [src]="dog.src" alt="" class="img-fluid">
+        </div>
+    </div>
+    <div class="row no-gutters">
+        <div class="col-md-8">
+            <div class="dog-detail">
+                <h6 (click)="showDescription = !showDescription">{{dog.title}}</h6>
+                <p [hidden] = "!showDescription">{{dog.description}}</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="dog-rating">
+                <div class="paw">
+                    <span class="small-paw"></span>
+                    <span class="small-paw"></span>
+                    <span class="small-paw"></span>
+                </div>
+                <div class="rating">
+                    <p>{{dog.pawFive}}</p>
+                    <p>Paw-fives</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

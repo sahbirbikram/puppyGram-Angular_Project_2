@@ -1,0 +1,115 @@
+@import '../../custom-style.scss';
+
+.bg-light {
+    background-color: #f7f7f7;
+}
+
+.header {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    .navbar-brand {
+        text-transform: uppercase;
+        font-weight: 900;
+        color: $primary;
+        letter-spacing: 0.7px;
+        position: relative;
+        span {
+            color: $secondary;
+        }
+        span.paw {
+            display: inline-block;
+            width: 25px;
+            height: 20px;
+            margin: 0px 10px;
+            border-radius: 12.5px/10px;
+            background-color: $primary;
+            position: absolute;
+            top: 15px;
+            right: -50px;
+            span {
+                display: inline-block;
+                background-color: $secondary;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                &:first-child {
+                    position: absolute;
+                    top: -16px;
+                    left: -2px;
+                }
+                &:nth-child(2) {
+                    position: absolute;
+                    top: -14px;
+                    left: 15px;
+                }
+                &:last-child {
+                    position: absolute;
+                    top: -2px;
+                    right: -13px;
+                }
+            }
+        }
+    }
+    .input-placeholder {
+        position: relative;
+        margin-left: 100px;
+        width: 55%;
+      }
+      .input-placeholder input {
+        border: 2px solid rgba($primary, 0.2);
+        border-radius: 5px;
+        padding: 2px 10px;
+        background: transparent;
+        width: 100%;
+
+      }
+      .input-placeholder input:valid + .placeholder {
+        display: none;
+      }
+      
+      .placeholder {
+        position: absolute;
+        pointer-events: none;
+        top: 0;
+        bottom: 0;
+        left: 0px;
+        right: 0px;
+        color: rgba($primary, 0.4);
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .placeholder span {
+        color: rgba($primary, 0.4);
+        padding-right: 10px;
+      }
+    .right-items {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 20%;
+        font-weight: 500;
+
+        .btn {
+            padding: 2px 40px;
+            color: #fff;
+            border-radius: 7px;
+        }
+        p{
+            font-size: 15px;
+            background: rgba($primary, 0.4);
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

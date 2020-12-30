@@ -1,0 +1,118 @@
+@import '../../custom-style.scss';
+
+.darker {
+    background: rgba(0, 0, 0, 0.9);
+    opacity: 0.8 !important;
+}
+.modal {
+    .modal-dialog {
+        .modal-content {
+            border: none;
+            border-radius: 0;
+            .modal-body {
+                padding: 0;
+                position: relative;
+                .delete {
+                    position: absolute;
+                    z-index: 1051;
+                    top: 5px;
+                    right: 5px;
+                    height: 30px;
+                    width: 30px;
+                    background: $primary;
+                    color: #fff;
+                    font-weight: 700;
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    transition: 0.3s;
+                
+                }
+                .dog-detail{
+                    padding: 20px;
+                    position: relative;
+
+                    h6 {
+                        font-weight: 700;
+                        cursor: pointer;
+                    }
+                    p{
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: rgba($primary, 0.7);
+                        height: 50px;
+                        margin: 0;
+                        overflow: hidden;
+
+                    }
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        top: 30px;
+                        bottom: 30px;
+                        right: 0;
+                        border: 1px solid rgba($primary, 0.2);
+                    }
+
+                }
+                .dog-rating {
+                    padding: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    height: 100%;
+                    .paw {
+                        width: 25px;
+                        height: 20px;
+                        margin-right: 20px;
+                        border: 1px solid rgba($primary, 0.7);
+                        border-radius: 12.5px/10px;
+                        background-color: transparent;
+                        position: relative;
+                        // top: 35px;
+                        // left: 0px;
+                        span {
+                            display: inline-block;
+                            border: 1px solid rgba($primary, 0.7);
+                            background-color: transparent;
+                            width: 10px;
+                            height: 10px;
+                            border-radius: 50%;
+                            &:first-child {
+                                position: absolute;
+                                top: -16px;
+                                left: -2px;
+                            }
+                            &:nth-child(2) {
+                                position: absolute;
+                                top: -14px;
+                                left: 15px;
+                            }
+                            &:last-child {
+                                position: absolute;
+                                top: -2px;
+                                right: -13px;
+                            }
+                        }
+                    }
+                    .rating {
+                        p{
+                            height: auto;
+                            margin: 0;
+                            color: rgba($primary, 0.7);
+                            line-height: 1.3;
+                            font-size: 14px;
+                            font-weight: 500;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+
+

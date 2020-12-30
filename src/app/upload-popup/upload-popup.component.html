@@ -1,0 +1,45 @@
+
+<div class="modal-body">
+    <i class="fa fa-times delete" aria-hidden="true" (click)="activeModal.dismiss()"></i>
+    <h3>Upload your dog photo</h3>
+    <form enctype="multipart/form-data" [formGroup]="dogForm" (ngSubmit)="onSubmit()">
+        <div class="form-group row py-3">
+            <label for="uploadPhoto" class="col-md-4">Upload a photo</label>
+            <div class="col-md-8 p-0">
+                <div class="form-row align-items-center">
+                    <div class="col-md-8">
+                        <button class="btn btn-upload" type="button">Select Photo
+                            <input type="file" (change)="onSelectFile($event)" formControlName="dogPhoto">
+                        </button>
+                    </div>
+                    <div class="col-md-4 d-flex justify-content-end">
+                        <div class="dog-preview">
+                            <img [src]="url" class="img-fluid">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group row no-gutters">
+            <label for="title" class="col-md-4">Title</label>
+            <input type="text" class="form-control col-md-8" placeholder="What breed is your dog" formControlName="dogTitle">
+        </div>
+        <div class="form-group row align-items-start no-gutters">
+            <label for="description" class="col-md-4">Description<br><span>(Optional)</span></label>
+            <textarea type="text" class="form-control col-md-8" placeholder="(Optional)" rows="4" formControlName="dogDescription"></textarea>
+        </div>
+        <div class="form-group row no-gutters">
+            <label for="userId" class="col-md-4">Secret User ID</label>
+            <input type="text" class="form-control col-md-8" placeholder="#######" formControlName="dogPassword">
+        </div>
+        <div class="form-grouppy-3">
+            <button type="button" class="btn btn-secondary w-100" (click)="onSubmit()">Submit</button>
+
+        </div>
+
+
+    </form>
+
+</div>
